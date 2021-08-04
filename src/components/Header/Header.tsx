@@ -7,7 +7,11 @@ import {
   getCurrentMonth,
 } from "../../utilits/date";
 
-export function Header() {
+export interface HeaderProps {
+  counter: number;
+}
+export function Header(props: HeaderProps) {
+  const { counter } = props;
   return (
     <div className="header-container">
       <div className="day-all-todo-container">
@@ -15,7 +19,7 @@ export function Header() {
           <strong>{getCurrentDay()},</strong>
           {getNumberDay()}
         </div>
-        <div className="all-todo">12 tasks</div>
+        <div className="all-todo">{counter} tasks</div>
       </div>
       <div className="month-remain-container">
         <div className="month">{getCurrentMonth()}</div>

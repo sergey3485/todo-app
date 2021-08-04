@@ -7,12 +7,16 @@ export interface Todo {
   createdAt: Date;
 }
 
-export function TodoList() {
+export interface TodoListProps {
+  todo:Todo
+}
+export function TodoList(props: TodoListProps) {
+  const { todo } =props;
   return (
     <div className="todo-list">
-      <input className="checkbox" type="checkbox" />
-      <div className="todo-text">Cделать todo</div>
-      <div className="todo-time">5:40</div>
+      <input className="checkbox" type="checkbox" checked={todo.done} />
+      <div className="todo-text">{todo.text}</div>
+      <div className="todo-time">{todo.createdAt.toDateString()}</div>
       <div className="delete-button">
         <button className="delete-this-todo" type="button">
           delete
