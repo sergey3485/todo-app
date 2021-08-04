@@ -1,0 +1,42 @@
+.header-container {
+  width: 100%;
+  border-bottom: 1px solid rgba(170, 169, 169, 0.336);
+  padding-bottom: 16px;
+}
+
+.day-all-todo-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.day-number {
+  font-size: 48px;
+  color: royalblue;
+}
+
+.all-todo {
+  display: flex;
+  align-items: flex-end;
+  font-size: 32px;
+  color: gray;
+}
+
+.month-remain-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+}
+
+.month {
+  font-size: 32px;
+  color: gray;
+}
+
+.remain-todo {
+  display: flex;
+  align-items: flex-end;
+  font-size: 32px;
+  color: gray;
+}
