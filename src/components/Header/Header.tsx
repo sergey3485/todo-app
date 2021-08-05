@@ -9,9 +9,10 @@ import {
 
 export interface HeaderProps {
   counter: number;
+  remainCounter: number;
 }
 export function Header(props: HeaderProps) {
-  const { counter } = props;
+  const { counter, remainCounter } = props;
   return (
     <div className="header-container">
       <div className="day-all-todo-container">
@@ -23,7 +24,7 @@ export function Header(props: HeaderProps) {
       </div>
       <div className="month-remain-container">
         <div className="month">{getCurrentMonth()}</div>
-        <div className="remain-todo">4 remain</div>
+        <div className="remain-todo">{remainCounter} remain</div>
       </div>
     </div>
   );

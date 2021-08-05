@@ -29,9 +29,11 @@ export const getCurrentMonth = () => {
   return monthText;
 };
 
-export const formatTodoDate = (date: Date) => {
-  const hour = date.getHours();
-  const minutes = date.getMinutes();
+export const formatTodoDate = (date: Date | string) => {
+  const parsedDate = new Date(date);
+
+  const hour = parsedDate.getHours();
+  const minutes = parsedDate.getMinutes();
 
   return `${hour}:${minutes}`;
 };
