@@ -1,6 +1,6 @@
-import React from "react";
-import "./todoItem.css";
 import { formatTodoDate } from "../../utilits/date";
+
+import "./todoItem.css";
 
 export interface Todo {
   text: string;
@@ -13,8 +13,10 @@ export interface TodoItemProps {
   onDeleteTodo: (todo:Todo) => void;
   onChangeTodoDone: (todo:Todo) => void;
 }
+
 export function TodoItem(props: TodoItemProps) {
   const { todo, onDeleteTodo, onChangeTodoDone } =props;
+
   return (
     <div className="todo-list">
       <input className="checkbox" type="checkbox" checked={todo.done} onChange={() => onChangeTodoDone(todo)}/>

@@ -1,14 +1,16 @@
-import React, { useState } from "react";
-import "./App.css";
+import * as React from "react";
 
 import { Header } from "../Header/Header";
 import { Input } from "../Input/Input";
 import { TodoItem, Todo } from "../TodoItem/TodoItem";
+
 import { saveToLocalStorage, readFromLocalStorage } from "../../utilits/storage"
 
+import "./App.css";
+
 export function App() {
-  const [todoList, setTodo] = useState<Todo[]>(readFromLocalStorage("todos") ?? []);
-  const [text, setText] = useState("");
+  const [todoList, setTodo] = React.useState<Todo[]>(readFromLocalStorage("todos") ?? []);
+  const [text, setText] = React.useState("");
 
   const changeText = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newText = event.currentTarget.value;
@@ -61,6 +63,7 @@ export function App() {
   let filtredDoneTodoList = todoList.filter((item) => item.done === false).length;
 
   const checkTodoListLenght = todoList.length > 1;
+
   return (
     <div className="app-container">
       <Header  counter={todoList.length} remainCounter={filtredDoneTodoList} />

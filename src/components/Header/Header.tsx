@@ -1,18 +1,20 @@
-import React from "react";
-import "./header.css";
-
 import {
   getCurrentDay,
   getNumberDay,
   getCurrentMonth,
 } from "../../utilits/date";
 
+import "./header.css";
+
+
 export interface HeaderProps {
   counter: number;
   remainCounter: number;
 }
+
 export function Header(props: HeaderProps) {
   const { counter, remainCounter } = props;
+
   return (
     <div className="header-container">
       <div className="day-all-todo-container">
