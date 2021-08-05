@@ -1,5 +1,5 @@
 import React from "react";
-import "./todoList.css";
+import "./todoItem.css";
 import { formatTodoDate } from "../../utilits/date";
 
 export interface Todo {
@@ -8,12 +8,12 @@ export interface Todo {
   createdAt: Date;
 }
 
-export interface TodoListProps {
+export interface TodoItemProps {
   todo:Todo,
   onDeleteTodo: (todo:Todo) => void;
   onChangeTodoDone: (todo:Todo) => void;
 }
-export function TodoList(props: TodoListProps) {
+export function TodoItem(props: TodoItemProps) {
   const { todo, onDeleteTodo, onChangeTodoDone } =props;
   return (
     <div className="todo-list">

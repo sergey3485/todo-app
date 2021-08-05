@@ -3,7 +3,7 @@ import "./App.css";
 
 import { Header } from "../Header/Header";
 import { Input } from "../Input/Input";
-import { TodoList, Todo } from "../TodoList/TodoList";
+import { TodoItem, Todo } from "../TodoItem/TodoItem";
 import { saveToLocalStorage, readFromLocalStorage } from "../../utilits/storage"
 
 export function App() {
@@ -67,7 +67,7 @@ export function App() {
       {checkTodoListLenght && <button className="clear-button" onClick={ClearTodoList}>Clear</button>}
       <div className="todo-list-container">
         {todoList.map((todo, index) => (
-          <TodoList key={index} todo={todo} onDeleteTodo={deleteTodo} onChangeTodoDone={changeTodoDone}/>
+          <TodoItem key={index} todo={todo} onDeleteTodo={deleteTodo} onChangeTodoDone={changeTodoDone}/>
         ))}
       </div>
       <Input text={text} onChangeText={changeText} onAddTodo={addTodo} />
