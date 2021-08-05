@@ -56,7 +56,7 @@ export function App() {
     setTodo(changedTodoList);
   }
 
-  const ClearTodoList = () => {
+  const сlearTodoList = () => {
     setTodo([]);
   }
 
@@ -67,7 +67,7 @@ export function App() {
   return (
     <div className="app-container">
       <Header  counter={todoList.length} remainCounter={filtredDoneTodoList} />
-      {checkTodoListLenght && <button className="clear-button" onClick={ClearTodoList}>Clear</button>}
+      {checkTodoListLenght && <button className="clear-button" onClick={сlearTodoList}>Clear</button>}
       <div className="todo-list-container">
         {todoList.map((todo, index) => (
           <TodoItem key={index} todo={todo} onDeleteTodo={deleteTodo} onChangeTodoDone={changeTodoDone}/>
